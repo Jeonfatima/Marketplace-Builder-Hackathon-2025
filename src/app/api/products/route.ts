@@ -7,7 +7,7 @@ export async function GET() {
     const data = await client.fetch(`*[_type=="product"]{
     _id,
     title,
-    "imageUrl" :productImage.asset -> url,
+    productImage,
     price,
     tags,
     dicountPercentage,

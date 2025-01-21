@@ -1,36 +1,45 @@
 import { createClient } from '@sanity/client';
 
 const client = createClient({
-  projectId: 'your-project-id',
-  dataset: 'production',
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
   useCdn: true,
   apiVersion: '2025-01-13',
-  token: 'your-auth-token',
+  token: process.env.SANITY_API_TOKEN,
 });
+
 
 async function uploadImageToSanity(imageUrl) {
   try {
     console.log(`Uploading image: ${imageUrl}`);
 
+    // Fetch the image from the URL
     const response = await fetch(imageUrl);
     if (!response.ok) {
-      throw new Error(`Failed to fetch image: ${imageUrl}`);
+      throw new Error(`Failed to fetch image from URL: ${imageUrl}`);
     }
 
+    // Convert the image response to a buffer
     const buffer = await response.arrayBuffer();
     const bufferImage = Buffer.from(buffer);
 
+    // Upload the image to Sanity
+    const filename = imageUrl.split('/').pop();
     const asset = await client.assets.upload('image', bufferImage, {
-      filename: imageUrl.split('/').pop(),
+      filename: filename,
     });
 
     console.log(`Image uploaded successfully: ${asset._id}`);
+
+    // Return the asset reference ID to be used in the product
     return asset._id;
   } catch (error) {
-    console.error('Failed to upload image:', imageUrl, error);
+    console.error('Error uploading image:', error);
     return null;
   }
 }
+
+export default uploadImageToSanity;
 
 async function uploadProduct(product) {
   try {
