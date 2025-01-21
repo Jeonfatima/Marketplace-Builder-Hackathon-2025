@@ -1,0 +1,6 @@
+Test Case ID,Description,Steps,Expected Result,Actual Result,Status,Severity Level,Assigned To,Remarks
+TC-001,Validate product listing,"1. Open the shop page.\n2. Verify products are displayed correctly.",All products should be displayed with correct data,All products are displayed as expected,Passed,Low,Self,No issues found.
+TC-002,Add to Cart functionality,"1. Add a product to the cart.\n2. Verify cart quantity and total price update.",Cart updates with correct total price and quantity,Cart updates as expected,Passed,Medium,Self,No issues found.
+TC-003,Dynamic routing for product pages,"1. Click on a product.\n2. Verify the product details page loads correctly.",Product details page loads with accurate data,Page loads without errors,Passed,Low,Self,No issues found.
+TC-004,API data fetching from Sanity,"1. Fetch products from Sanity API.\n2. Verify correct data is displayed on the frontend.",Data loads successfully without delay or errors,Data fetched and displayed correctly,Passed,High,Self,No issues found.
+TC-005,Error handling for failed API,"1. Simulate network failure.\n2. Verify fallback UI or error message is shown.",User-friendly error message is displayed,"Error: ""Unable to load images. Please try again later.""",Passed,High,Self,Error message displayed successfully.
