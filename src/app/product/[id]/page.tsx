@@ -3,13 +3,8 @@ import ProductDetails from "@/app/components/ProductDetails";
 import { client } from "@/sanity/lib/client";
 import { Product } from "@/types/product";
 
-// Define the expected type for the params
-interface PageProps {
-  params: { id: string };
-}
-
-export default async function Page({ params }: PageProps) {
-  const { id } = params; // Destructure the id from params
+export default async function Page({ params }: { params: { id: string } }) {
+  const { id } = params; 
 
   // Fetch product data based on the dynamic route parameter `id`
   const product: Product | null = await client.fetch(
