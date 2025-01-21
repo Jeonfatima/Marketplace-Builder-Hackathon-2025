@@ -23,7 +23,7 @@ const Page = () => {
         fetchProduct();
     }, [id]); // Dependency is now `id` instead of `slug`
 
-    if (!product) return <div>Loading...</div>;
+   
 
     return (
         <>
