@@ -9,7 +9,7 @@ import { Product } from '@/types/product'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import { TiDeleteOutline } from 'react-icons/ti'
 import { urlFor } from '@/sanity/lib/image'
-const page = () => {
+const Page = () => {
   const { onRemove, cartItems , incQty , decQty , totalPrice}: any = useContext(CartContext)
 
   return (
@@ -149,4 +149,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 "use client"
 import React, { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
@@ -5,7 +6,7 @@ import { Product } from '@/types/product'
 import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
 
-const page = () => {
+const Page = () => {
   const { cartItems, totalPrice}: any = useContext(CartContext)
 
   return (
@@ -228,4 +229,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
