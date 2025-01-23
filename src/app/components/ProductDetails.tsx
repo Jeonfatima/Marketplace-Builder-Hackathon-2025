@@ -20,6 +20,8 @@ import Button from './Button';
 
 
 const ProductDetails = ({ product }: { product: Product }) => {
+  console.log("Product:", product);
+  console.log("Description:", product?.description);
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleReadMore = () => setIsExpanded(!isExpanded);

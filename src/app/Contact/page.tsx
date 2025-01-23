@@ -14,7 +14,7 @@ const page = () => {
           priority
         />
       </section>
-      <div className='lg;max-w-[644px] pt-[5%]'>
+      <div className='lg:max-w-[644px] pt-[5%]'>
         <h1 className='text-center text-4xl pb-8 font-bold'>Get in Touch with us</h1>
         <p className='text-lg text-center text-gray-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, molestias reiciendis assumenda animi <br/> laudantium voluptas qui commodi odit totam blanditiis.</p>
       </div>
