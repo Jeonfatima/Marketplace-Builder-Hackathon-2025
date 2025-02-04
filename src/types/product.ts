@@ -8,5 +8,9 @@ export type Product = {
     productImage: SanityImageSource; 
     quantity:number
     tags:string[]
+    shipmentDetails?: {
+        carrier: string;
+        trackingNumber: string;
+      };
 
 }

@@ -66,7 +66,9 @@ const Navbar = () => {
         {/* Search and Icons (Visible on large devices) */}
         <div className="hidden lg:flex items-center gap-6">
           <button className="text-2xl">
+            <Link href={"/signup"}>
             <MdOutlinePersonOutline />
+            </Link>
           </button>
           <button className="text-xl"  onClick={() => setShowDropdown((prev) => !prev)}>
             <GoSearch />
