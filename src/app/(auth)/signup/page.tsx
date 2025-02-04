@@ -4,7 +4,7 @@ import Image from 'next/image';
 import handleSubmitForm from '@/actions/signupAction';
 import { useActionState } from "react";
 
-const page = () => {
+const Page = () => {
 
 const [formState , formAction] = useActionState(handleSubmitForm, undefined)
 
@@ -91,4 +91,4 @@ const [formState , formAction] = useActionState(handleSubmitForm, undefined)
   );
 };
 
-export default page;
+export default Page;

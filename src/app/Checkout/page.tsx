@@ -18,7 +18,7 @@ const Page = () => {
   
 
   const [checkoutStatus, setCheckoutStatus] = useState<string | null>(null);
-  const [shippingCharges, setShippingCharges] = useState<number>(0);
+  
   const [shipmentDetails, setShipmentDetails] = useState<ShipmentDetails | null>(null);
   const [customerInfo, setCustomerInfo] = useState({
     name: "",
@@ -93,7 +93,7 @@ const Page = () => {
         });
        
 
-        setShippingCharges(data.shippingCharges || 0);
+       
         setCheckoutStatus("Order placed successfully!");
       } else {
         setCheckoutStatus("Failed to place order. Please try again.");
